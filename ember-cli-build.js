@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const autoprefixer = require('autoprefixer');
