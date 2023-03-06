@@ -1,5 +1,90 @@
-<div class="container mx-auto">
-    <div class="centre flex justify-center">
+<div class='flex justify-center '>
+    <div class="bg-pink-200 border-4 border border-black">
+        <div class="flex justify-center paddingbox">
+            <img class="scale-150" alt={{@profile.details.name}} src={{@profile.details.sprites.front_default}}>
+        </div>
+
+        <div>
+
+            <div>
+                <p class="font-extrabold text-2xl text-black bg-white text-center">PROFILE</p>
+                <div class="p-5 ">
+                    <ul class="list-disc list-inside">
+                    <li><span class="font-bold">Height:</span> {{@profile.details.height}}cm</li>
+                    <li><span class="font-bold">Weight:</span> {{@profile.details.weight}}g</li>
+                    <li><span class="capitalize"><span class="font-bold">Abilities:</span> {{this.abilities}}</span></li>
+                    <li><span class="capitalize"><span class="font-bold">Egg Groups:</span> {{this.egggroups}}</span></li>
+                    <li><span class="capitalize"><span class="font-bold">Type:</span> {{this.types}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <p class="font-bold text-2xl text-black bg-white text-center">STATS</p>
+            <div class="p-5 m-3 statpadding">
+
+                {{#each @profile.details.stats as |stats|}}
+                <div class="flex justify-between mb-1">
+                    <span class="text-base font-medium  dark:text-white capitalize">{{stats.stat.name}}</span>
+                    <span class="text-sm font-medium text-blue-700 dark:text-white">{{stats.base_stat}}</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="bg-blue-600 h-2.5 rounded-full" style={{progress-bar-width stats.base_stat}}></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div>
+            {{#if @profile.evolves.name}}
+            <p class="font-bold text-2xl text-black bg-white text-center">EVOLUTION</p>
+            <div class="m-3 p-2">
+
+                <div class="flex justify-center items-center">
+                    <img class="scale-125" src={{@profile.evolves.img.sprites.front_default}} alt={{@profile.evolves.name.name}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M24 12l-12-8v5h-12v6h12v5z" />
+                    </svg>
+                    <img class="scale-125" src={{@profile.details.sprites.front_default}} alt={{@profile.details.name}}>
+                </div>
+                <p class="text-center"><span class="capitalize font-semibold">{{@profile.evolves.name.name}}</span> evolves into <span
+                        class="capitalize font-semibold">{{@profile.details.name}}</span></p>
+            </div>
+            {{/if}}
+        </div>
+        <div>
+            <p class="font-bold text-2xl text-black bg-white text-center">MOVES</p>
+            <div class="p-5 m-3">
+                <ul class="list-disc list-inside">
+                {{#each @profile.details.moves as |moves|}}
+                <li class="capitalize">
+                    {{moves.move.name}}
+                </li>
+                {{/each}}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <div class="container mx-auto ">
+
+    <div class="centre flex justify-center bg-red-500">
 
         <div class="flex bg-sky-400 border border-black p-5 m-3 ">
             <div class="px-3">
@@ -44,4 +129,4 @@
         </div>
     </div>
     {{/if}}
-</div>
+</div> --}}

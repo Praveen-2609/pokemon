@@ -1,4 +1,8 @@
 {{page-title "Pokemon"}}
-
-<p class="container mx-auto text-violet-800 text-3xl font-bold text-center mb-10 uppercase">{{@model.details.name}}</p>
-<Profile @profile={{@model}} />
+<div class="pokemon-container" style={{pokemon-bg @model.details.types}}>
+    <LinkTo @route="index">
+    <img src="https://img.icons8.com/sf-regular/48/null/circled-left-2--v1.png"/ alt="Back Button"></LinkTo>
+    <p class="container mx-auto text-white text-4xl underline underline-offset-4 font-bold text-center mb-10 uppercase">{{@model.details.name}}
+    </p>
+    <Profile @profile={{@model}} />
+</div>

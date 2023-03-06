@@ -8,10 +8,10 @@ export default class IndexController extends Controller {
 
   get characters() {
     for (let i = 0; i < this.model.length; i++) {
-      let { name, url } = this.model[i];
+      let { name } = this.model[i];
       this.model[i] = {
+        ...this.model[i],
         name,
-        url,
         isValid: name.startsWith(this.name),
       };
     }
