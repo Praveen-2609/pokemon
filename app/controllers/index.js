@@ -11,7 +11,6 @@ export default class IndexController extends Controller {
       let { name } = this.model[i];
       this.model[i] = {
         ...this.model[i],
-        name,
         isValid: name.startsWith(this.name),
       };
     }

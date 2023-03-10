@@ -1,5 +1,4 @@
 import Route from '@ember/routing/route';
-import RSVP from 'rsvp';
 import { inject as service } from '@ember/service';
 
 export default class PokemonRoute extends Route {
@@ -12,14 +11,14 @@ export default class PokemonRoute extends Route {
       var evolved_species_img =
         await this.pokemon_character_evolved_species_img(species);
     }
-    return RSVP.hash({
+    return {
       details,
       species,
       evolves: {
         name: species.evolves_from_species,
         img: evolved_species_img,
       },
-    });
+    };
   }
 
   async pokemon_character_species(api) {

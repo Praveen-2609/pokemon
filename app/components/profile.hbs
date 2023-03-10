@@ -12,9 +12,9 @@
                     <ul class="list-disc list-inside">
                     <li><span class="font-bold">Height:</span> {{@profile.details.height}}cm</li>
                     <li><span class="font-bold">Weight:</span> {{@profile.details.weight}}g</li>
-                    <li><span class="capitalize"><span class="font-bold">Abilities:</span> {{this.abilities}}</span></li>
-                    <li><span class="capitalize"><span class="font-bold">Egg Groups:</span> {{this.egggroups}}</span></li>
-                    <li><span class="capitalize"><span class="font-bold">Type:</span> {{this.types}}</span></li>
+                    <li><span class="capitalize"><span class="font-bold">Abilities:</span> {{concatstr @profile.details.abilities 'ability.name'}}</span></li>
+                    <li><span class="capitalize"><span class="font-bold">Egg Groups:</span> {{concatstr @profile.species.egg_groups 'name'}}</span></li>
+                    <li><span class="capitalize"><span class="font-bold">Type:</span> {{concatstr @profile.details.types 'type.name'}}</span></li>
                     </ul>
                 </div>
             </div>
